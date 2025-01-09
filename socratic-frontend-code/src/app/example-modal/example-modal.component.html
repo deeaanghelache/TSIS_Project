@@ -1,0 +1,19 @@
+<div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal()"></div>
+
+<div class="modal-container" *ngIf="isModalOpen">
+  <div class="modal-header">
+    <h2>Example Problem</h2>
+    <button class="close-button" (click)="closeModal()">✖</button>
+  </div>
+  <div class="modal-content">
+    <p>Here is an example math problem you can try:</p>
+    <p><strong>2x + 3 = 7</strong></p>
+    <p>Step 1: Subtract 3 from both sides.</p>
+    <p>Step 2: Divide by 2 to solve for x.</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn-close" (click)="closeModal()">Close</button>
+  </div>
+</div>
+
+<button class="btn-see-example" (click)="openModal()">See Example</button>

@@ -1,0 +1,50 @@
+<h1> Solve with us </h1>
+
+<div class="math-problem-form">
+    <h2>🧮 Solve Your Math Problem</h2>
+    <br>
+    <br>
+    <br>
+    <form (ngSubmit)="onSubmit()" #mathForm="ngForm">
+      <div class="form-group">
+        <label for="mathProblem">Enter your problem</label>
+        <input
+          type="text"
+          id="mathProblem"
+          name="mathProblem"
+          class="form-control"
+          [(ngModel)]="mathProblem"
+          placeholder="Your problem goes here..."
+          required
+        />
+      </div>
+      <br>
+      <br>
+      <br>
+      <button type="submit" class="btn" [disabled]="!mathForm.valid">
+        Solve it! ✨
+      </button>
+      <button type="button" class="btn-see-example" (click)="openModal()">See Example</button>
+    </form>
+  </div>
+  
+  <div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal()"></div>
+  
+  <div class="modal-container" *ngIf="isModalOpen">
+    <div class="modal-header">
+      <h2>Example Problem</h2>
+      <button class="close-button" (click)="closeModal()">✖</button>
+    </div>
+    <div class="modal-content">
+      <p> 
+        John buys twice as many red ties as blue ties.
+        The red ties cost 50% more than blue ties. He
+        spent $200 on blue ties that cost $40 each. How
+        much did he spend on ties?
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-close" (click)="closeModal()">Close</button>
+    </div>
+  </div>
+  
